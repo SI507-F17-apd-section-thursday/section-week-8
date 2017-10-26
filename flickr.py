@@ -34,11 +34,12 @@ def search_flickr(data):
         "format": "json",
         "api_key": FLICKR_API_KEY,
         "nojsoncallback": 1,
-        "method": "flickr.photos.search",
-        "tags": tags,
-        "per_page": 10,
-
+        # "method": "flickr.photos.search",
+        # "tags": tags,
+        # "per_page": 10,
     }
+
+    params_diction.update(data)
 
     unique_ident = params_unique_combination(baseurl,params_diction)
     if unique_ident in CACHE_DICTION:
